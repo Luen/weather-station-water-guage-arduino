@@ -13,6 +13,9 @@
 #define rxPin 10
 #define txPin 11
 
+// Low power sleep duration - How long the unit will sleep between waking up to take sensor readings
+const unsigned long LowPowerSleepDuration = 900000; // 15 minutes in milliseconds
+
 // Real-time clock
 RTCZero rtc;
 unsigned long lastSyncTime = 0;
@@ -240,5 +243,5 @@ void loop()
         lastPublishTime = currentTime;
     }
     // Enter low power mode until next 15-minute mark
-    LowPower.sleep(900000 - (millis() % 900000)); // Consider any potential drift in timekeeping, especially if the internal RTC is not periodically synchronized with a more accurate time source
+    LowPower.sleep(LowPowerSleepDuration - (millis() % LowPowerSleepDuration)); // Consider any potential drift in timekeeping, especially if the internal RTC is not periodically synchronized with a more accurate time source
 }
