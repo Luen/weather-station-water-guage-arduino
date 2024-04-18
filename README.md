@@ -3,5 +3,7 @@
 https://github.com/arduino-libraries/MKRNB/tree/master
 
 
-https://github.com/waveshareteam/e-Paper/tree/master/Arduino
-module: epd2in9
+
+Setting up server:
+https://github.com/SensorsIot/IOTstack
+https://github.com/emield12/docker-influxdb-grafana-nodered-mqtt
